@@ -19,34 +19,36 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>All Authors</title>
         <link rel='stylesheet' type='text/css' href='styles.css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
         <h1>Results!</h1>
      
-                
-        <table>
-            <tr>
-                <th>Author Name</th>
-                <th>Author Id</th>
-                <th>Date Added</th>
+       <div class ="container">         
+        <table style = "width:500px;" class = "table table-striped table-hover table-condensed">
+            <tr style = "background-color:black;color:white;">
+                <th align ="left" class ="tableHead">Author Name</th>
+                <th align ="left" class ="tableHead">Author Id</th>
+                <th align ="right" class ="tableHead">Date Added</th>
             </tr>
 
             <c:forEach items="${authorList}" var="author" begin="0" end="${endOfList}">
                 <tr>
-                    <td>
+                    <td align = "left">
                         <c:out value="${author.getAuthorName()}"/>
                     </td>
-                    <td>
+                    <td align = "left">
                         <c:out value="${author.getAuthorId()}"/>
                     </td>
-                    <td>
+                    <td align = "right">
                 <C:out value="${author.getDateAdded()}"/>
             </td>
         </tr>
     </c:forEach>
 </table>
-
-
+       </div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+           </script>
 
 </body>
 </html>
